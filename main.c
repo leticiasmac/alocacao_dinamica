@@ -15,10 +15,10 @@
 int main(int argc, char *argv[])
 {
 	//cria um ponteiro para o bloco de memoria alocado
-	char memoria_alocada;
+	char *memoria_alocada;
 	//aloca  a quantidade de memoria solicitada (50xchar)
 	//e inicializa o ponteiro com a posicao da memoria
-	memoria_alocada = malloc (50*sizeof(char));
+	memoria_alocada = calloc (50, sizeof(char));
 	//se o ponteiro foi inicializado com o valor nulo
 	if(memoria_alocada == NULL)
 	{
