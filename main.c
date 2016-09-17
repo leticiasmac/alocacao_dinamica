@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <malloc.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -30,6 +31,22 @@ int main(int argc, char *argv[])
 	{
 		//transfere a mensagem para a memoria alocada
 		strcpy(memoria_alocada, "esta e a melhor aula do mundo!\n");
+	}
+	//exibe o conteudo da memoria alocada
+	printf("o conteudo da memoria alocada eh: %s\n", memoria_alocada);
+	
+	//altera a quantidade de memoria alocada para (100xchar)
+	memoria_alocada = realloc(memoria_alocada, 100*sizeof(char));
+	//se o ponteiro foi inicializado com o valor nulo
+	if(memoria_alocada == NULL)
+	{
+		//exibe a mensagem de erro
+		printf("nao foi possivel alocar a memoria desejada!\n");
+	}
+	else
+	{
+		//tranfere a mensagem para a memoria alocada
+		strcpy(memoria_alocada, " quantidade de memoria alocada alterada!\n");
 	}
 	//exibe o conteudo da memoria alocada
 	printf("o conteudo da memoria alocada eh: %s\n", memoria_alocada);
